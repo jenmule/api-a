@@ -84,15 +84,15 @@ pipeline {
                  DEPLOY_TO_CH_REGION = "${env.CH_REGION}"
                  DEPLOY_TO_CH_WORKERS = "${env.CH_WORKERS}"
                  DEPLOY_TO_CH_WORKER_TYPE = "${env.CH_WORKER_TYPE}"
-                 BUILD_NAME = "${env.CH_ENV_QA}-${env.API_NAME}-${env.VERSION}"
                }
                steps {
                		  script {
                		    if ("${env.VERSION}".contains('-')) {
             					env.VERSION_NO_SS = "${env.VERSION}".substring(0, "${env.VERSION}".indexOf('-'))
-            					env.D_BUILD_NAME = "${env.CH_ENV_QA}-${env.API_NAME}-${env.VERSION_NO_SS}"
+            					env.BUILD_NAME = "${env.CH_ENV_QA}-${env.API_NAME}-${env.VERSION_NO_SS}"
+                                env.D_BUILD_NAME = "${env.BUILD_NAME}".replace('.', '-')
           				} else {
-          				    BUILD_NAME = "${env.CH_ENV_QA}-${env.API_NAME}-${env.VERSION}"
+          				        env.BUILD_NAME = "${env.CH_ENV_QA}-${env.API_NAME}-${env.VERSION}"
             					env.D_BUILD_NAME = "${env.BUILD_NAME}".replace('.', '-')
           				}             		
                 		  }
