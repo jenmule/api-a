@@ -21,7 +21,7 @@
 		<anypoint.username>${ANYPOINT_USERNAME}</anypoint.username>
 		<anypoint.password>${ANYPOINT_PASSWORD}</anypoint.password>
 		<anypoint.uri>https://anypoint.mulesoft.com</anypoint.uri>
-		<anypoint.businessGroup>Sab Comp</anypoint.businessGroup>
+		<anypoint.businessGroup>${ANYPOINT_BG}</anypoint.businessGroup>
 		
 		<!-- CLOUDHUB -->
 		<cloudhub.env>${CH_ENV}</cloudhub.env>
