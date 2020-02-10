@@ -15,7 +15,7 @@ pipeline {
       
       
       ANYPOINT = credentials("ANYPOINT")
-      MSTEAMS = credentials("ms-teams")
+      MSTEAMS = credentials("mslink")
       //CloudHub Enviroments
       CH_ENV_DEV = 'DEV'
       CH_ENV_QA = 'QA'
